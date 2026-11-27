@@ -3,6 +3,7 @@ const supabase = window.supabase.createClient(url, publishableKey);
 const authPanel = document.querySelector("#auth-panel");
 const loginForm = document.querySelector("#login-form");
 const loginMessage = document.querySelector("#login-message");
+const dashboardMessage = document.querySelector("#dashboard-message");
 const loginButton = document.querySelector("#login-button");
 const dashboard = document.querySelector("#dashboard");
 const signedInAs = document.querySelector("#signed-in-as");
@@ -27,8 +28,11 @@ let currentUser = null;
 let posts = [];
 
 function message(text, isError = false) {
-  loginMessage.textContent = text;
-  loginMessage.style.color = isError ? "#a3453d" : "#36724f";
+  const target = dashboard.hidden ? loginMessage : dashboardMessage;
+  if (target) {
+    target.textContent = text;
+    target.style.color = isError ? "#a3453d" : "#36724f";
+  }
 }
 function resetForm() {
   form.reset();
