@@ -32,3 +32,16 @@ Msaada Kenya is an independent resource directory, not a government website. Ext
 ## Technology
 
 HTML, CSS and vanilla JavaScript.
+
+## Admin dashboard prototype
+
+Open `admin.html` (or use the Admin dashboard link on the homepage) to add, edit, delete, publish and unpublish opportunity posts.
+
+**Prototype limitation:** Listings are stored in the browser's localStorage on the current device and browser only. They are not shared with visitors on other devices, are not backed up to a server, and the admin page has no authentication. Do not treat this as a secure production admin system. The public homepage can display published posts stored in the same browser.
+
+## Recommended production next steps
+
+- Connect a hosted database and secure authentication with admin-only permissions.
+- Validate and moderate submitted opportunities.
+- Add expiry dates, source verification and reporting tools.
+- Deploy server-side access controls before using real admin accounts.
