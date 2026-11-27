@@ -103,3 +103,30 @@ if (opportunitySearch) {
   });
   updateOpportunities();
 }
+
+
+// Public opportunity posts are read from this browser's local storage.
+(function renderPublishedListings() {
+  const container = document.querySelector("#public-listings");
+  if (!container) return;
+  const empty = document.querySelector("#listing-empty");
+  const count = document.querySelector("#listing-count");
+  let posts = [];
+  try { posts = JSON.parse(localStorage.getItem("msaada-opportunities") || "[]"); } catch (_) { posts = []; }
+  posts = posts.filter((post) => post && post.status === "published");
+  count.textContent = posts.length + (posts.length === 1 ? " listing" : " listings");
+  empty.hidden = posts.length > 0;
+  container.innerHTML = "";
+  posts.sort((a,b) => (b.createdAt || "").localeCompare(a.createdAt || "")).forEach((post) => {
+    const article = document.createElement("article");
+    article.className = "listing-card";
+    const kind = document.createElement("div"); kind.className = "listing-kind"; kind.textContent = String(post.type || "OPPORTUNITY").toUpperCase();
+    const title = document.createElement("h3"); title.textContent = post.title || "Untitled opportunity";
+    const org = document.createElement("div"); org.className = "listing-org"; org.textContent = post.organisation || "";
+    const desc = document.createElement("p"); desc.textContent = post.description || "";
+    const bottom = document.createElement("div"); bottom.className = "listing-bottom";
+    const link = document.createElement("a"); link.href = post.url || "#"; link.target = "_blank"; link.rel = "noopener noreferrer"; link.textContent = "View application ↗";
+    const deadline = document.createElement("time"); deadline.textContent = post.deadline ? "Deadline: " + post.deadline : "";
+    bottom.append(link, deadline); article.append(kind,title,org,desc,bottom); container.append(article);
+  });
+})();
