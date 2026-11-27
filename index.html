@@ -15,9 +15,9 @@
   <header class="topbar">
     <a class="brand" href="#" aria-label="Msaada Kenya home"><span class="brand-mark">M</span><span>Msaada<span class="brand-light">Kenya</span></span></a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#explore">Explore</a><a href="#about">About</a>
+      <a href="#explore">Explore</a><a href="#opportunities">Opportunities</a><a href="#about">About</a>
     </nav>
-    <a class="top-cta" href="#explore">Explore services <span>↗</span></a>
+    <a class="top-cta" href="#opportunities">Find opportunities <span>↗</span></a>
   </header>
 
   <main>
@@ -78,7 +78,40 @@
       <p class="disclaimer">Msaada Kenya is an independent resource directory, not a government website. Always confirm requirements and deadlines on the official website before applying.</p>
     </section>
 
-    <section class="bottom-banner" id="about"><div><div class="eyebrow">BUILT TO BE USEFUL</div><h2>Less searching.<br>More doing.</h2><p>One simple starting point for the information that helps you move forward.</p></div><div class="banner-mark">M<span>✳</span></div></section>
+
+    <section class="opportunity-section" id="opportunities">
+      <div class="section-heading opportunity-heading"><div><div class="eyebrow dark-eyebrow">YOUR NEXT MOVE</div><h2>Opportunity finder</h2><p>Explore trusted places to look for work, funding and tenders.</p></div><span class="result-count" id="opportunity-count">6 directories</span></div>
+      <div class="opportunity-note"><span>ⓘ</span><p>These are links to opportunity platforms, not confirmed vacancies. Check each provider for current openings, eligibility and deadlines before applying.</p></div>
+      <div class="opportunity-controls">
+        <div class="search-wrap opportunity-search"><span class="search-icon">⌕</span><input id="opportunity-search" type="search" placeholder="Search jobs, scholarships, tenders..." aria-label="Search opportunity directories"></div>
+        <div class="filters" id="opportunity-filters" role="group" aria-label="Filter opportunity type">
+          <button class="filter active" data-op-filter="all" aria-pressed="true">All</button><button class="filter" data-op-filter="jobs" aria-pressed="false">Jobs</button><button class="filter" data-op-filter="internships" aria-pressed="false">Internships</button><button class="filter" data-op-filter="scholarships" aria-pressed="false">Scholarships</button><button class="filter" data-op-filter="tenders" aria-pressed="false">Tenders</button><button class="filter" data-op-filter="digital" aria-pressed="false">Digital work</button>
+        </div>
+      </div>
+      <div class="opportunity-grid" id="opportunity-grid">
+        <article class="opportunity-card" data-kind="jobs" data-search="public service commission government jobs careers vacancies kenya">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-green">▣</span><span class="source-tag">PUBLIC SECTOR</span></div><div class="opportunity-type">JOBS</div><h3>Public Service Commission</h3><p>Check official public service recruitment notices, advertised positions and application instructions.</p><div class="opportunity-actions"><a href="https://www.publicservice.go.ke/" target="_blank" rel="noopener">Visit official site ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save Public Service Commission">☆ Save</button></div>
+        </article>
+        <article class="opportunity-card" data-kind="jobs internships" data-search="brighter monday kenya jobs internships private sector">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-yellow">↗</span><span class="source-tag">JOB PLATFORM</span></div><div class="opportunity-type">JOBS · INTERNSHIPS</div><h3>BrighterMonday Kenya</h3><p>Browse private-sector vacancies and career opportunities across different industries.</p><div class="opportunity-actions"><a href="https://www.brightermonday.co.ke/" target="_blank" rel="noopener">Browse listings ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save BrighterMonday Kenya">☆ Save</button></div>
+        </article>
+        <article class="opportunity-card" data-kind="scholarships" data-search="higher education funding hef scholarships student loans bursaries">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-purple">✳</span><span class="source-tag">EDUCATION FUNDING</span></div><div class="opportunity-type">SCHOLARSHIPS & FUNDING</div><h3>Higher Education Financing</h3><p>Find official information about student funding, scholarships and higher education support.</p><div class="opportunity-actions"><a href="https://www.hef.co.ke/" target="_blank" rel="noopener">Visit HEF ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save Higher Education Financing">☆ Save</button></div>
+        </article>
+        <article class="opportunity-card" data-kind="digital jobs" data-search="ajira digital online work training digital jobs freelancers">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-blue">⌘</span><span class="source-tag">DIGITAL WORK</span></div><div class="opportunity-type">DIGITAL WORK</div><h3>Ajira Digital</h3><p>Explore digital skills training and information about online work opportunities.</p><div class="opportunity-actions"><a href="https://ajiradigital.go.ke/" target="_blank" rel="noopener">Explore Ajira ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save Ajira Digital">☆ Save</button></div>
+        </article>
+        <article class="opportunity-card" data-kind="tenders" data-search="public procurement information portal tenders government procurement suppliers">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-peach">▤</span><span class="source-tag">PUBLIC PROCUREMENT</span></div><div class="opportunity-type">TENDERS</div><h3>Public Procurement Portal</h3><p>Look for public procurement notices and tender information. Review each notice carefully.</p><div class="opportunity-actions"><a href="https://tenders.go.ke/" target="_blank" rel="noopener">View tenders ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save Public Procurement Portal">☆ Save</button></div>
+        </article>
+        <article class="opportunity-card" data-kind="jobs internships" data-search="fuzu jobs career advice learning opportunities kenya">
+          <div class="opportunity-card-top"><span class="opportunity-symbol symbol-green">◎</span><span class="source-tag">CAREER PLATFORM</span></div><div class="opportunity-type">JOBS & CAREER GROWTH</div><h3>Fuzu</h3><p>Explore job listings, career guidance and professional development resources.</p><div class="opportunity-actions"><a href="https://www.fuzu.com/" target="_blank" rel="noopener">Visit Fuzu ↗</a><button class="save-opportunity" type="button" aria-pressed="false" aria-label="Save Fuzu">☆ Save</button></div>
+        </article>
+      </div>
+      <div class="empty-state" id="opportunity-empty" hidden><div>⌕</div><h3>No matching platforms</h3><p>Try another keyword or select a different opportunity type.</p></div>
+      <p class="disclaimer">Saved platforms are stored only in this browser on this device. This first version does not yet have user accounts or a live vacancy feed.</p>
+    </section>
+\n    <section class="bottom-banner" id="about"><div><div class="eyebrow">BUILT TO BE USEFUL</div><h2>Less searching.<br>More doing.</h2><p>One simple starting point for the information that helps you move forward.</p></div><div class="banner-mark">M<span>✳</span></div></section>
   </main>
   <footer><a class="brand footer-brand" href="#"><span class="brand-mark">M</span><span>Msaada<span class="brand-light">Kenya</span></span></a><span>Useful things, all in one place.</span><span>© <span id="year"></span> Msaada Kenya</span></footer>
   <script src="app.js"></script>
