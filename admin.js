@@ -1,10 +1,25 @@
-const { url, publishableKey } = window.MSAADA_SUPABASE_CONFIG;
-const supabase = window.supabase.createClient(url, publishableKey);
+let supabase = null;
 const authPanel = document.querySelector("#auth-panel");
 const loginForm = document.querySelector("#login-form");
 const loginMessage = document.querySelector("#login-message");
 const dashboardMessage = document.querySelector("#dashboard-message");
 const loginButton = document.querySelector("#login-button");
+
+try {
+  const config = window.MSAADA_SUPABASE_CONFIG;
+  if (!window.supabase || typeof window.supabase.createClient !== "function") {
+    throw new Error("The Supabase library did not load. Refresh the page and try again.");
+  }
+  if (!config || !config.url || !config.publishableKey) {
+    throw new Error("The Supabase connection settings are missing.");
+  }
+  supabase = window.supabase.createClient(config.url, config.publishableKey);
+} catch (setupError) {
+  loginMessage.textContent = setupError.message;
+  loginMessage.style.color = "#a3453d";
+  loginButton.disabled = true;
+  console.error("Msaada Kenya setup error:", setupError);
+}
 const dashboard = document.querySelector("#dashboard");
 const signedInAs = document.querySelector("#signed-in-as");
 const signOutButton = document.querySelector("#sign-out");
@@ -103,20 +118,31 @@ async function showDashboard(user) {
 }
 loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (!supabase) {
+    message("The database connection did not initialise. Refresh the page and try again.", true);
+    return;
+  }
   loginButton.disabled = true;
-  message("Signing in…");
+  message("Signing in… Please wait.");
   const email = document.querySelector("#login-email").value.trim();
   const password = document.querySelector("#login-password").value;
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  loginButton.disabled = false;
-  if (error) { message(error.message, true); return; }
   try {
+    const signInRequest = supabase.auth.signInWithPassword({ email, password });
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("The sign-in request is taking too long. Check your internet connection, then refresh and try again.")), 15000)
+    );
+    const { data, error } = await Promise.race([signInRequest, timeout]);
+    if (error) throw error;
+    message("Login successful. Checking administrator access…");
     await showDashboard(data.user);
     message("");
   } catch (problem) {
     dashboard.hidden = true;
     authPanel.hidden = false;
-    message(problem.message || "Unable to load the admin dashboard.", true);
+    message(problem.message || "Unable to sign in. Please try again.", true);
+    console.error("Msaada Kenya sign-in error:", problem);
+  } finally {
+    loginButton.disabled = false;
   }
 });
 signOutButton.addEventListener("click", async () => {
