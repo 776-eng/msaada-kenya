@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b25">
+  <meta name="description" content="Find useful Kenyan services, learning resources and opportunities in one place.">
+  <title>Msaada Kenya — Useful things, all in one place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Msaada Kenya home"><span class="brand-mark">M</span><span>Msaada<span class="brand-light">Kenya</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#explore">Explore</a><a href="#about">About</a>
+    </nav>
+    <a class="top-cta" href="#explore">Explore services <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> MADE FOR EVERYDAY KENYANS</div>
+        <h1>Good information.<br><span>Better opportunities.</span></h1>
+        <p class="hero-text">Find useful services, learning resources and opportunities without jumping from one website to another.</p>
+        <a class="hero-button" href="#explore">Find what you need <span>→</span></a>
+        <div class="trust-line"><span class="trust-icon">✓</span> Useful links, gathered in one place</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-card card-main"><div class="card-top"><span class="mini-icon green">↗</span><span class="card-label">YOUR NEXT STEP</span></div><div class="card-big">Find<br>your way.</div><div class="card-bottom"><span>Opportunities start here</span><span>✳</span></div></div>
+        <div class="float-card float-one"><span class="float-icon">🎓</span><span><b>Learn something</b><small>Courses & skills</small></span></div>
+        <div class="float-card float-two"><span class="float-icon">💼</span><span><b>Find an opportunity</b><small>Jobs & scholarships</small></span></div>
+        <div class="hero-spark">✳</div>
+      </div>
+    </section>
+
+    <section class="quick-stats" aria-label="What you can explore">
+      <div><strong>01</strong><span>Opportunities</span></div><div><strong>02</strong><span>Public services</span></div><div><strong>03</strong><span>Learning</span></div><div><strong>04</strong><span>Business</span></div>
+    </section>
+
+    <section class="explore-section" id="explore">
+      <div class="section-heading"><div><div class="eyebrow dark-eyebrow">THE RESOURCE HUB</div><h2>What are you looking for?</h2><p>Explore a category or search for something specific.</p></div><span class="result-count" id="result-count">8 resources</span></div>
+      <div class="search-wrap"><span class="search-icon">⌕</span><input id="search-input" type="search" placeholder="Search jobs, HELB, courses, eCitizen..." aria-label="Search resources"><kbd>SEARCH</kbd></div>
+      <div class="filters" role="group" aria-label="Filter resources">
+        <button class="filter active" data-filter="all">All resources</button><button class="filter" data-filter="opportunities">Opportunities</button><button class="filter" data-filter="services">Public services</button><button class="filter" data-filter="learning">Learning</button><button class="filter" data-filter="business">Business</button>
+      </div>
+      <div class="resource-grid" id="resource-grid">
+        <article class="resource-card" data-category="opportunities" data-search="jobs careers internships public service commission">
+          <div class="resource-icon icon-lilac">↗</div><div class="resource-meta">OPPORTUNITIES <span>01</span></div><h3>Jobs & internships</h3><p>Explore career openings and internship opportunities from trusted sources.</p><a href="https://www.publicservice.go.ke/" target="_blank" rel="noopener">Explore opportunities <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="opportunities" data-search="scholarships funding education university">
+          <div class="resource-icon icon-yellow">✳</div><div class="resource-meta">OPPORTUNITIES <span>02</span></div><h3>Scholarships & funding</h3><p>Find education funding information and scholarship resources.</p><a href="https://www.hef.co.ke/" target="_blank" rel="noopener">Visit funding portal <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="services" data-search="ecitizen government services documents passport">
+          <div class="resource-icon icon-mint">▤</div><div class="resource-meta">PUBLIC SERVICES <span>03</span></div><h3>eCitizen services</h3><p>Access a range of Kenyan government services and applications online.</p><a href="https://www.ecitizen.go.ke/" target="_blank" rel="noopener">Open eCitizen <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="services" data-search="sha social health authority healthcare registration">
+          <div class="resource-icon icon-blue">＋</div><div class="resource-meta">PUBLIC SERVICES <span>04</span></div><h3>Social Health Authority</h3><p>Find official information about health coverage and registration.</p><a href="https://sha.go.ke/" target="_blank" rel="noopener">Visit SHA <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="learning" data-search="free online courses digital skills technology">
+          <div class="resource-icon icon-peach">⌘</div><div class="resource-meta">LEARNING <span>05</span></div><h3>Free online courses</h3><p>Build practical skills through free learning resources and courses.</p><a href="https://www.khanacademy.org/" target="_blank" rel="noopener">Start learning <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="learning" data-search="Ajira digital Kenya online work training skills">
+          <div class="resource-icon icon-lilac">◎</div><div class="resource-meta">LEARNING <span>06</span></div><h3>Ajira Digital</h3><p>Discover digital work training and resources for online opportunities.</p><a href="https://ajiradigital.go.ke/" target="_blank" rel="noopener">Explore Ajira <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="business" data-search="business registration brs Kenya company">
+          <div class="resource-icon icon-yellow">▦</div><div class="resource-meta">BUSINESS <span>07</span></div><h3>Register a business</h3><p>Find official information on business registration in Kenya.</p><a href="https://brs.go.ke/" target="_blank" rel="noopener">Visit BRS <span>↗</span></a>
+        </article>
+        <article class="resource-card" data-category="business" data-search="Kenya Revenue Authority KRA tax iTax">
+          <div class="resource-icon icon-mint">%</div><div class="resource-meta">BUSINESS <span>08</span></div><h3>KRA & tax services</h3><p>Access official tax information, iTax and taxpayer services.</p><a href="https://www.kra.go.ke/" target="_blank" rel="noopener">Visit KRA <span>↗</span></a>
+        </article>
+      </div>
+      <div class="empty-state" id="empty-state" hidden><div>⌕</div><h3>No resources found</h3><p>Try another search term or choose a different category.</p></div>
+      <p class="disclaimer">Msaada Kenya is an independent resource directory, not a government website. Always confirm requirements and deadlines on the official website before applying.</p>
+    </section>
+
+    <section class="bottom-banner" id="about"><div><div class="eyebrow">BUILT TO BE USEFUL</div><h2>Less searching.<br>More doing.</h2><p>One simple starting point for the information that helps you move forward.</p></div><div class="banner-mark">M<span>✳</span></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">M</span><span>Msaada<span class="brand-light">Kenya</span></span></a><span>Useful things, all in one place.</span><span>© <span id="year"></span> Msaada Kenya</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
